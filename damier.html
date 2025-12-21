@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Dames</title>
+    <link rel="stylesheet" href="damier.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jeu de Dames</h1>
+        <div id="status">Tour du joueur 1 (Rouge)</div>
+        <div id="capture-obligatoire">Capture obligatoire !</div>
+        <div id="gameBoard"></div>
+        <button id="resetButton">Nouvelle Partie</button>
+        
+        <div class="rules">
+            <h3>Règles du jeu :</h3>
+            <ul>
+                <li>Les rouges commencent</li>
+                <li>Déplacement en diagonale vers l'avant seulement</li>
+                <li>La capture est obligatoire si possible</li>
+                <li>On capture en sautant par-dessus un pion adverse</li>
+                <li>Le gagnant est celui qui capture tous les pions adverses</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="damier.js"></script>
+</body>
+</html>

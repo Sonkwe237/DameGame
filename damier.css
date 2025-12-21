@@ -1,0 +1,175 @@
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+        
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 0;
+        }
+        
+        #status {
+            margin: 15px 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffcc00;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        #capture-obligatoire {
+            color: #ff5252;
+            font-weight: bold;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        #gameBoard {
+            display: grid;
+            grid-template-columns: repeat(10, 45px);
+            grid-template-rows: repeat(10, 45px);
+            border: 3px solid #333;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            margin: 0 auto;
+            background: #222;
+        }
+        
+        .cell {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .white {
+            background-color: #f0d9b5;
+        }
+        
+        .black {
+            background-color: #b58863;
+        }
+        
+        .piece {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .piece:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+        }
+        
+        .player1 {
+            background: radial-gradient(circle at 30% 30%, #ff4d4d, #cc0000);
+        }
+        
+        .player2 {
+            background: radial-gradient(circle at 30% 30%, #4d79ff, #0033cc);
+        }
+        
+        .selected {
+            box-shadow: 0 0 0 4px yellow, 0 0 15px yellow;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 3px yellow, 0 0 10px yellow; }
+            50% { box-shadow: 0 0 0 6px yellow, 0 0 20px yellow; }
+            100% { box-shadow: 0 0 0 3px yellow, 0 0 10px yellow; }
+        }
+        
+        .possible-move {
+            position: relative;
+        }
+        
+        .possible-move::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(0, 255, 0, 0.3);
+            border: 2px solid green;
+        }
+        
+        .capture-move::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.3);
+            border: 2px solid red;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+        
+        #resetButton {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        #resetButton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to bottom, #66bb6a, #388e3c);
+        }
+        
+        .rules {
+            margin-top: 20px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 500px;
+        }
+        
+        .rules h3 {
+            color: #ffcc00;
+            margin-top: 0;
+        }
+        
+        .rules ul {
+            padding-left: 20px;
+        }
+ 
