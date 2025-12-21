@@ -1,0 +1,17 @@
+{
+    "version" : 2,
+    "builds" : [
+        {
+            "src" : "damier.html",
+            "use" : "@vercel/node"
+        }
+    ],
+    "routes" : [
+        {
+            "src" : "/(.*)",
+            "dest" : "damier.html"
+        }
+
+    ]
+}
+        
